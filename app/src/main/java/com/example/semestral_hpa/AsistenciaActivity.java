@@ -14,8 +14,6 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.semestral_hpa.Adapters.Estudiantes;
-import com.example.semestral_hpa.Helpers.Archivos;
 
 public class AsistenciaActivity extends AppCompatActivity {
 
@@ -53,39 +51,4 @@ public class AsistenciaActivity extends AppCompatActivity {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    @Override
-    protected void onNewIntent(Intent intent) {
-        getTagInfo(intent);
-        super.onNewIntent(intent);
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    private void getTagInfo(Intent intent) {
-        Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
-
-        String techList = tag.getTechList()[2];
-        if (techList.equals(Ndef.class.getName())){
-            Ndef mNdef = Ndef.get(tag);
-            if (mNdef!= null) {
-                NdefMessage mNdefMessage = mNdef.getCachedNdefMessage();
-                NdefRecord[] records = mNdefMessage.getRecords();
-                if(records != null){
-                    Estudiantes estudiante = new Estudiantes(
-                            new String(mNdefMessage.getRecords()[0].getPayload()),
-                            "",
-                            new String(mNdefMessage.getRecords()[1].getPayload()),
-                            "12:00 md"
-                    );
-
-                    new Archivos(getApplicationContext()).CrearArchivo("Asistencia20221LS142.txt",estudiante.toString());
-                }
-
-
-                String cedula = new String(mNdefMessage.getRecords()[0].getPayload());
-
-                Toast.makeText(getApplicationContext(),"Lectura => "+cedula,Toast.LENGTH_LONG).show();
-            }
-        }
-    }
 }
