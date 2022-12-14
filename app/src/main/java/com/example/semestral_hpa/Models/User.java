@@ -5,8 +5,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class User {
 
-
-
     @SerializedName("id")
     @Expose
     private int id;
@@ -28,6 +26,20 @@ public class User {
     @SerializedName("docente_id")
     @Expose
     private int docenteId;
+
+
+
+    @SerializedName("estudiante_id")
+    @Expose
+    private int estudianteId;
+
+    public int getEstudianteId() {
+        return estudianteId;
+    }
+
+    public void setEstudianteId(int estudianteId) {
+        this.estudianteId = estudianteId;
+    }
 
     public int getId() {
         return id;
@@ -84,7 +96,6 @@ public class User {
     public void setDocenteId(int docenteId) {
         this.docenteId = docenteId;
     }
-
 
 
 }

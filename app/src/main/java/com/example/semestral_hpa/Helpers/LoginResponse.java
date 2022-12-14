@@ -1,95 +1,21 @@
 package com.example.semestral_hpa.Helpers;
 
+import com.example.semestral_hpa.Models.User;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginResponse {
-    public LoginResponse(int id, String nombres, String apellidos, String email, String cedula, int role, int docenteId) {
-        this.id = id;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.email = email;
-        this.cedula = cedula;
-        this.role = role;
-        this.docenteId = docenteId;
-    }
 
-    @SerializedName("id")
+    @SerializedName("usuario")
     @Expose
-    private int id;
-    @SerializedName("nombres")
-    @Expose
-    private String nombres;
-    @SerializedName("apellidos")
-    @Expose
-    private String apellidos;
-    @SerializedName("email")
-    @Expose
-    private String email;
-    @SerializedName("cedula")
-    @Expose
-    private String cedula;
-    @SerializedName("role")
-    @Expose
-    private int role;
-    @SerializedName("docente_id")
-    @Expose
-    private int docenteId;
+    private User usuario;
 
-    public int getId() {
-        return id;
+    public User getUsuario() {
+        return usuario;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-
-    public int getRole() {
-        return role;
-    }
-
-    public void setRole(int role) {
-        this.role = role;
-    }
-
-    public int getDocenteId() {
-        return docenteId;
-    }
-
-    public void setDocenteId(int docenteId) {
-        this.docenteId = docenteId;
+    public void setUsuario(User usuario) {
+        this.usuario = usuario;
     }
 
 

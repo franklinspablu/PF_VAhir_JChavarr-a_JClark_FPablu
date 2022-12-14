@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,10 +12,7 @@ import android.widget.Toast;
 
 import com.example.semestral_hpa.Helpers.LoginRequest;
 import com.example.semestral_hpa.Helpers.LoginResponse;
-import com.example.semestral_hpa.Models.User;
 import com.example.semestral_hpa.Services.ApiClient;
-
-import java.util.List;
 
 import retrofit2.Call;
 
@@ -62,42 +58,30 @@ public class ActivityLogin extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
-                if(response.isSuccessful()){
+                if(response.isSuccessful() && response.body()!= null){
                     Toast.makeText(ActivityLogin.this,"Login Successful", Toast.LENGTH_LONG).show();
-                    LoginResponse loginResponse = response.body();
+                    String nombre = response.body().getUsuario().getNombres()+ " "+response.body().getUsuario().getApellidos();
+                    int rol = response.body().getUsuario().getRole();
+                    int id=0;
 
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            switch (loginResponse.getRole()){
+                   id = rol == 2 ? response.body().getUsuario().getDocenteId() :  response.body().getUsuario().getEstudianteId();
 
-                                case 1:{
-                                    Toast.makeText(ActivityLogin.this, "Eres Admin, Benvenute", Toast.LENGTH_SHORT).show();
-                                    //startActivity(new Intent(IniciarSesion_Act.this,Admin_Act.class).putExtra("data",loginResponse.getNombres()));
-                                }
 
-                                case 2: {
-                                    Toast.makeText(ActivityLogin.this, "Eres Profe, Benvenute", Toast.LENGTH_SHORT).show();
-                                    //startActivity(new Intent(IniciarSesion_Act.this,Estudiante_Act.class).putExtra("data",loginResponse.getNombres()));
-                                }
+                    Bundle b = new Bundle();
+                    b.putString("nombre", nombre);
+                    b.putInt("id", id);
+                    b.putInt("rol", rol);
+                    Intent i = new Intent(getApplicationContext(), Activity_PerfilUsuario.class);
+                    i.putExtras(b);
+                    startActivity(i);
 
-                                case 3: {
-                                    Toast.makeText(ActivityLogin.this, "Eres Estudiante, Benvenute", Toast.LENGTH_SHORT).show();
-                                   // startActivity(new Intent(IniciarSesion_Act.this, Profesor_Act.class).putExtra("data",loginResponse.getNombres()));
-                                }
-                            }
-
-                        }
-                    },700);
-
-                }else{
+                        }else{
                     Toast.makeText(ActivityLogin.this,"Login Failed", Toast.LENGTH_LONG).show();
+                 }
                 }
-            }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Toast.makeText(ActivityLogin.this,"Throwable "+t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
 
             }
         });

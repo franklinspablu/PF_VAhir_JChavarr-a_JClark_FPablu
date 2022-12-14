@@ -28,10 +28,10 @@ public class ActivityLstAsistencia extends AppCompatActivity {
 
     private void LlenarListview() {
         String datos;
-        List<Estudiantes> estudiantes = ConvertArchivoToList(datos);
+       // List<Estudiantes> estudiantes = ConvertArchivoToList(datos);
 
-        AsistenciaListViewAdapter adapter = new AsistenciaListViewAdapter(getApplicationContext(),estudiantes);
-        lstAsistencia.setAdapter(adapter);
+       // AsistenciaListViewAdapter adapter = new AsistenciaListViewAdapter(getApplicationContext(),estudiantes);
+      //  lstAsistencia.setAdapter(adapter);
     }
 
     private List<Estudiantes> ConvertArchivoToList(String datos) {

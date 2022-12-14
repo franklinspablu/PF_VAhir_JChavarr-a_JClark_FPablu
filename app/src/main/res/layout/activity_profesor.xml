@@ -38,7 +38,7 @@
         android:layout_marginTop="20dp"
         android:background="@color/black"
         android:textColor="@color/white"
-        android:onClick="GetList"
+        android:onClick="GetListAsignaturas"
         android:text="Asignaturas"
         android:textSize="20dp" />
 
@@ -52,7 +52,7 @@
         android:layout_marginTop="20dp"
         android:background="@color/black"
         android:textColor="@color/white"
-        android:onClick="GetList"
+        android:onClick="GetListAsistencia"
         android:text="Lista de Asistencia"
         android:textSize="20dp" />
 
@@ -66,7 +66,7 @@
         android:layout_marginTop="20dp"
         android:background="@color/black"
         android:textColor="@color/white"
-        android:onClick="GetAttendance"
+        android:onClick="GetAsistencia"
         android:text="Pasar Asistencia"
         android:textSize="20dp" />
 

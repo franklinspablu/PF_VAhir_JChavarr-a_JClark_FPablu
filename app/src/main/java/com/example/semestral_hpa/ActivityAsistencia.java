@@ -75,7 +75,7 @@ public class ActivityAsistencia extends AppCompatActivity{
                             "12:00 md"
                     );
 
-                    new Archivos(getApplicationContext()).CrearArchivo("Asistencia20221LS142.txt",estudiante.toString());
+                    //new Archivos(getApplicationContext()).CrearArchivo("Asistencia20221LS142.txt",estudiante.toString());
                 }
 
 
