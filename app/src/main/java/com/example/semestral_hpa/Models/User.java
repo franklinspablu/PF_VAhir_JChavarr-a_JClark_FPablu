@@ -1,18 +1,11 @@
-package com.example.semestral_hpa.Helpers;
+package com.example.semestral_hpa.Models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginResponse {
-    public LoginResponse(int id, String nombres, String apellidos, String email, String cedula, int role, int docenteId) {
-        this.id = id;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.email = email;
-        this.cedula = cedula;
-        this.role = role;
-        this.docenteId = docenteId;
-    }
+public class User {
+
+
 
     @SerializedName("id")
     @Expose
@@ -91,6 +84,7 @@ public class LoginResponse {
     public void setDocenteId(int docenteId) {
         this.docenteId = docenteId;
     }
+
 
 
 }

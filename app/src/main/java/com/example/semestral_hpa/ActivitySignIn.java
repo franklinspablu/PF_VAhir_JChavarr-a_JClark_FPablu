@@ -1,7 +1,5 @@
 package com.example.semestral_hpa;
 
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -64,12 +62,12 @@ public class ActivitySignIn extends AppCompatActivity {
 
                         if (response.isSuccessful()) {
                             Toast.makeText(ActivitySignIn.this, "Registro exitoso", Toast.LENGTH_LONG).show();
-                            RegisterResponse RegisterResponse = response.body();
+                            RegisterResponse registerResponse = response.body();
 
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Toast.makeText(ActivitySignIn.this, "data: " + RegisterResponse.getMensaje(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ActivitySignIn.this, "data: " + registerResponse.getMensaje(), Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(ActivitySignIn.this, ActivityLogin.class));
                                 }
                             }, 700);

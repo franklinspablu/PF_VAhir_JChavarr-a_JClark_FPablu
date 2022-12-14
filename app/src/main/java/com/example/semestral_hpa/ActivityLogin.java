@@ -13,7 +13,10 @@ import android.widget.Toast;
 
 import com.example.semestral_hpa.Helpers.LoginRequest;
 import com.example.semestral_hpa.Helpers.LoginResponse;
+import com.example.semestral_hpa.Models.User;
 import com.example.semestral_hpa.Services.ApiClient;
+
+import java.util.List;
 
 import retrofit2.Call;
 
