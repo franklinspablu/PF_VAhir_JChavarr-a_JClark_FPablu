@@ -12,7 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.semestral_hpa.Adaptadores.Estudiantes;
+import com.example.semestral_hpa.Helpers.EstudiantesResponse;
 
 public class ActivityAsistencia extends AppCompatActivity{
 
@@ -68,7 +68,7 @@ public class ActivityAsistencia extends AppCompatActivity{
                 NdefMessage mNdefMessage = mNdef.getCachedNdefMessage();
                 NdefRecord[] records = mNdefMessage.getRecords();
                 if(records != null){
-                    Estudiantes estudiante = new Estudiantes(
+                    EstudiantesResponse estudiante = new EstudiantesResponse(
                             new String(mNdefMessage.getRecords()[0].getPayload()),
                             "",
                             new String(mNdefMessage.getRecords()[1].getPayload()),

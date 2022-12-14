@@ -27,11 +27,19 @@ public class User {
     @Expose
     private int docenteId;
 
-
-
     @SerializedName("estudiante_id")
     @Expose
     private int estudianteId;
+    @SerializedName("created_at")
+    @Expose
+    private String createdAt;
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
 
     public int getEstudianteId() {
         return estudianteId;

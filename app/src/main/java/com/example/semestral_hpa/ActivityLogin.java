@@ -62,6 +62,7 @@ public class ActivityLogin extends AppCompatActivity {
                     Toast.makeText(ActivityLogin.this,"Login Successful", Toast.LENGTH_LONG).show();
                     String nombre = response.body().getUsuario().getNombres()+ " "+response.body().getUsuario().getApellidos();
                     int rol = response.body().getUsuario().getRole();
+                    String correo = response.body().getUsuario().getEmail();
                     int id=0;
 
                    id = rol == 2 ? response.body().getUsuario().getDocenteId() :  response.body().getUsuario().getEstudianteId();
@@ -71,6 +72,7 @@ public class ActivityLogin extends AppCompatActivity {
                     b.putString("nombre", nombre);
                     b.putInt("id", id);
                     b.putInt("rol", rol);
+                    b.putString("correo",correo);
                     Intent i = new Intent(getApplicationContext(), Activity_PerfilUsuario.class);
                     i.putExtras(b);
                     startActivity(i);

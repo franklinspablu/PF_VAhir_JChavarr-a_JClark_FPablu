@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.semestral_hpa.Adaptadores.AsistenciaListViewAdapter;
-import com.example.semestral_hpa.Adaptadores.Estudiantes;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,12 +34,12 @@ public class ActivityLstAsistencia extends AppCompatActivity {
       //  lstAsistencia.setAdapter(adapter);
     }
 
-    private List<Estudiantes> ConvertArchivoToList(String datos) {
-        List<Estudiantes> lstEstudiantes = new ArrayList<>();
+    private List<Estudiante> ConvertArchivoToList(String datos) {
+        List<Estudiante> lstEstudiantes = new ArrayList<>();
         String[] estudiantes = datos.split("\\~");
         for (String estudiante : estudiantes){
             String[] campos = estudiante.split("\\|");
-            Estudiantes est = new Estudiantes(
+            Estudiante est = new Estudiante(
                     campos[0].substring(3),
                     "",
                     campos[2].substring(3),
