@@ -20,14 +20,14 @@ public class AsistenciaListViewAdapter extends ArrayAdapter {
     List<Estudiantes> opciones = new ArrayList();
 
     public AsistenciaListViewAdapter(@NonNull Context context, @NonNull List<Estudiantes> datos) {
-        super(context, R.layout.listview_attendance_template, datos);
+        super(context, R.layout.listview_template_asistencia, datos);
 
         opciones = datos;
     }
 
     public View getView(int pos, View v, ViewGroup vgroup){
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        View item = inflater.inflate(R.layout.listview_attendance_template,null);
+        View item = inflater.inflate(R.layout.listview_template_asistencia,null);
 
         TextView nombre = item.findViewById(R.id.lblNombre);
         nombre.setText(opciones.get(pos).getNombre());
