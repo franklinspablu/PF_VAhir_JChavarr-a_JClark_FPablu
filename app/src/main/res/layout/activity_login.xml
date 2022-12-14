@@ -129,12 +129,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnIngresar"
-        android:text="No tienes cuenta? Registrate"
         android:layout_centerInParent="true"
-        android:textSize="20dp"
-        android:textColor="@color/black"
+        android:minHeight="28dp"
         android:onClick="RegistrarseScreen"
-        />
+        android:text="No tienes cuenta? Registrate"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"/>
 
 
 </RelativeLayout>
