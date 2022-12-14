@@ -1,9 +1,16 @@
-package com.example.semestral_hpa;
+package com.example.semestral_hpa.Helpers;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class LoginRequest {
 
-
+    @SerializedName("usuario")
+    @Expose
     private String username;
+
+    @SerializedName("contrasena")
+    @Expose
     private String password;
 
     public String getUsername() {

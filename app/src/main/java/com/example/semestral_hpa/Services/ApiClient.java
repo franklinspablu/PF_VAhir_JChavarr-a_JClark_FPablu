@@ -1,4 +1,5 @@
-package com.example.semestral_hpa;
+package com.example.semestral_hpa.Services;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -15,7 +16,7 @@ public class ApiClient {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://api.irawen.net/")  //Change server URL
+                .baseUrl("https://asistencia-upn43.ondigitalocean.app/api/")  //Change server URL
                 .client(okHttpClient)
                 .build();
 

@@ -1,4 +1,4 @@
-package com.example.semestral_hpa;
+package com.example.semestral_hpa.Helpers;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -66,7 +66,6 @@ public class LoginResponse {
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }
-
 
     public int getRole() {
         return role;

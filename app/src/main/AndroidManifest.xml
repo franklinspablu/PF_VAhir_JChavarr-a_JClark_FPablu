@@ -14,9 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SemestralHPA"
         tools:targetApi="31">
-        <activity
-            android:name=".IniciarSesion_Act"
-            android:exported="true">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +25,22 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
+        <activity
+            android:name=".ActivityLogin"
+            android:exported="true">
         </activity>
+
+        <activity
+            android:name=".ActivitySignIn"
+            android:exported="true">
+        </activity>
+
+
+
+
+
+
     </application>
 
 </manifest>
