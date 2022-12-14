@@ -123,4 +123,18 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtRegistrarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnIngresar"
+        android:text="No tienes cuenta? Registrate"
+        android:layout_centerInParent="true"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:onClick="RegistrarseScreen"
+        />
+
+
 </RelativeLayout>

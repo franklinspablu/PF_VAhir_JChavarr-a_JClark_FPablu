@@ -2,6 +2,7 @@ package com.example.semestral_hpa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -22,7 +23,7 @@ import retrofit2.Response;
 public class ActivityLogin extends AppCompatActivity {
 //iniciar sesion
 
-    TextView txtCorreo, txtConstrasena;
+    TextView txtCorreo, txtConstrasena, txtRegistrarse;
     Button btnIngresar;
     LoginResponse loginResponse;
     @Override
@@ -38,8 +39,14 @@ public class ActivityLogin extends AppCompatActivity {
         txtCorreo = findViewById(R.id.txtcorreo);
         txtConstrasena  = findViewById(R.id.txtcontraseña);
         btnIngresar = findViewById(R.id.btnIngresar);
+        txtRegistrarse = findViewById(R.id.txtRegistrarse);
 
     }
+
+    public void RegistrarseScreen(View v){
+        startActivity(new Intent(this, ActivitySignIn.class));
+    }
+
 
     public void IngresarOnClick(View v){
         LoginRequest loginRequest = new LoginRequest();
@@ -82,9 +89,7 @@ public class ActivityLogin extends AppCompatActivity {
 
                 }else{
                     Toast.makeText(ActivityLogin.this,"Login Failed", Toast.LENGTH_LONG).show();
-
                 }
-
             }
 
             @Override
