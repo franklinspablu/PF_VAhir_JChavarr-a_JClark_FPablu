@@ -15,7 +15,7 @@
         android:theme="@style/Theme.SemestralHPA"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".IniciarSesion_Act"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

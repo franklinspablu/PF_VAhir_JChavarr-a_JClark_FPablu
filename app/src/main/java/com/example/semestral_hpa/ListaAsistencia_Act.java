@@ -2,20 +2,14 @@ package com.example.semestral_hpa;
 
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.nfc.NdefMessage;
-import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
-import android.nfc.Tag;
-import android.nfc.tech.Ndef;
-import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-
-public class AsistenciaActivity extends AppCompatActivity {
+//PASAR ASISTENCIA
+public class ListaAsistencia_Act extends AppCompatActivity {
 
     NfcAdapter nfcAdapter;
     PendingIntent mPendingIntent;
@@ -23,7 +17,7 @@ public class AsistenciaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_asistencia);
+        setContentView(R.layout.activity_pasarlista);
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (nfcAdapter == null){

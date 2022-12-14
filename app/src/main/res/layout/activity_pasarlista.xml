@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_titulo"
+        android:text="Pasando lista..."
+        android:textAlignment="center"
+        android:textSize="32dp"
+        android:textColor="@color/black"
+        android:layout_centerInParent="true"
+        />
+<Button
+    android:id="@+id/btn_detenerLectura"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/txt_titulo"
+    android:layout_centerInParent="true"
+    android:text="Detener"
+    />
+
+
+</RelativeLayout>
